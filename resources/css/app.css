@@ -1,0 +1,214 @@
+@import url('./fonts.css');
+
+@import url('./effects.css');
+
+:focus-visible {
+    outline: 1px solid #6355ff;
+}
+
+::selection {
+    color: #6355ff;
+    background: rgb(255 255 255 / 20%);
+}
+
+body {
+    color: #FFF;
+    background: linear-gradient(to bottom, #180122, #000010);
+    background-attachment: fixed;
+    margin: 0;
+}
+
+#app {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+#app, input, button {
+    font-family: "Source Code Pro";
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+#app-title {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+#error-title {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.subtitle {
+    opacity: 75%;
+}
+
+.all-caps {
+    text-transform: uppercase;
+}
+
+.pane-area,
+.center-pane-area {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 100%;
+}
+
+.center-pane-area {
+    justify-content: center;
+    flex: 1;
+}
+
+.pane-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 512px;
+    max-width: 100%;
+}
+
+.pane-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+.pane {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: inherit;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 10%), rgb(255 255 255 / 7.5%));
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: 24px;
+    box-sizing: border-box;
+    padding: 12px;
+    text-decoration: none;
+}
+
+button {
+    display: flex;
+}
+
+.error {
+    color: #ff005c;
+    border: 1px solid #ff005c;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label.data-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+input.data-input {
+    color: #FFF;
+    background: rgb(255 255 255 / 10%);
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: 6px;
+    width: 200px;
+    padding: 4px 8px;
+    transition: background .15s ease, transform .125s ease-out;
+
+    &:is(:hover, :focus) {
+        background: rgb(255 255 255 / 5%);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+:is(button, a):is(.data-button, .pane-button) {
+    color: #FFF;
+    background: rgb(255 255 255 / 5%);
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: 6px;
+    padding: 4px 8px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background .15s ease, transform .125s ease-out;
+
+    &:is(:hover, :focus) {
+        background: rgb(255 255 255 / 10%);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.pane-button {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+}
+
+#media-upload {
+    display: none;
+}
+
+#couch-container {
+    display: flex;
+    gap: 16px;
+}
+
+#couch-media {
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: 24px;
+    max-width: 66.66%;
+}
+
+#couch-chat {
+    width: 33.33%;
+    overflow: auto;
+}
+
+#couch-chat-log {
+    flex: 1;
+    hyphens: auto;
+}
+
+#couch-chat-bar {
+    display: flex;
+    gap: 8px;
+}
+
+#couch-chat-input {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+}
+
+.couch-chat-username {
+    color: #ff0078;
+
+    &::after {
+        content: ': ';
+    }
+}
